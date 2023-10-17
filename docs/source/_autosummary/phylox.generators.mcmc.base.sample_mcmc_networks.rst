@@ -1,6 +1,6 @@
-phylox.generators.mcmc.base.sample\_mcmc\_networks
+﻿phylox.generators.mcmc.base.sample\_mcmc\_networks
 ==================================================
 
 .. currentmodule:: phylox.generators.mcmc.base
 
-.. autofunction:: sample_mcmc_networks
+.. autodata:: sample_mcmc_networks

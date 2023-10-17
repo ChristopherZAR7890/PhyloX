@@ -1,4 +1,4 @@
-phylox.constants
+﻿phylox.constants
 ================
 
 .. automodule:: phylox.constants
@@ -12,6 +12,7 @@ phylox.constants
    
       LABEL_ATTR
       LENGTH_ATTR
+      RETIC_PREFIX
    
    
 
