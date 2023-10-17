@@ -1,4 +1,4 @@
-phylox.generators.trees.add\_edges
+﻿phylox.generators.trees.add\_edges
 ==================================
 
 .. automodule:: phylox.generators.trees.add_edges
@@ -8,16 +8,6 @@ phylox.generators.trees.add\_edges
    
 
    
-   
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:
-   
-      network_from_tree
-      random_vplu_move_at_bottom
-      random_vplu_move_local
-      random_vplu_move_uniform
    
    
 

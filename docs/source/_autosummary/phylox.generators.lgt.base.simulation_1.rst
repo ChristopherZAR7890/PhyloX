@@ -1,6 +1,6 @@
-phylox.generators.lgt.base.simulation\_1
+﻿phylox.generators.lgt.base.simulation\_1
 ========================================
 
 .. currentmodule:: phylox.generators.lgt.base
 
-.. autofunction:: simulation_1
+.. autodata:: simulation_1

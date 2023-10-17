@@ -1,4 +1,4 @@
-phylox.generators.mcmc.base
+﻿phylox.generators.mcmc.base
 ===========================
 
 .. automodule:: phylox.generators.mcmc.base
@@ -15,7 +15,6 @@ phylox.generators.mcmc.base
       :toctree:
    
       acceptance_probability
-      sample_mcmc_networks
    
    
 

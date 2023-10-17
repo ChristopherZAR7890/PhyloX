@@ -1,4 +1,4 @@
-phylox.generators.zods.zods
+﻿phylox.generators.zods.zods
 ===========================
 
 .. automodule:: phylox.generators.zods.zods
@@ -14,7 +14,6 @@ phylox.generators.zods.zods
    .. autosummary::
       :toctree:
    
-      generate_network_zods
       multree_to_dinetwork
    
    
