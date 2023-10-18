@@ -9,7 +9,8 @@ from copy import deepcopy
 
 import networkx as nx
 
-from phylox.constants import LABEL_ATTR
+from phylox.constants import LABEL_ATTR, MUVECTOR_ATTR
+from phylox.murep import add_mu_vectors_as_attribute
 
 #: The node attribute used to store the isometry label of a node.
 ISOMETRY_LABEL_ATTR = "isometry_label"
@@ -29,7 +30,7 @@ def _same_isometry_labels(node1_attributes, node2_attributes):
     """
     return node1_attributes.get(ISOMETRY_LABEL_ATTR) == node2_attributes.get(
         ISOMETRY_LABEL_ATTR
-    )
+    ) and node1_attributes.get(MUVECTOR_ATTR) == node2_attributes.get(MUVECTOR_ATTR) #Also compare mu-vectors
 
 
 # Checks whether the nodes with the given attributes have the same label
@@ -43,8 +44,8 @@ def _same_isometry_labels_and_labels(node1_attributes, node2_attributes):
     """
     return node1_attributes.get(ISOMETRY_LABEL_ATTR) == node2_attributes.get(
         ISOMETRY_LABEL_ATTR
-    ) and node1_attributes.get(LABEL_ATTR) == node2_attributes.get(LABEL_ATTR)
-
+    ) and node1_attributes.get(LABEL_ATTR) == node2_attributes.get(LABEL_ATTR
+    ) and node1_attributes.get(MUVECTOR_ATTR) == node2_attributes.get(MUVECTOR_ATTR) #Also compare mu-vectors
 
 # Checks whether two networks are labeled isomorpgic
 def is_isomorphic(network1, network2, partial_isomorphism=None, ignore_labels=False):
@@ -75,6 +76,13 @@ def is_isomorphic(network1, network2, partial_isomorphism=None, ignore_labels=Fa
     """
     nw1 = deepcopy(network1)
     nw2 = deepcopy(network2)
+
+    """
+    The mu-vectors of all the nodes in both networks are calculated and added as attributes
+    for speeding up the is_isomorphic function (less calls to nx.is_isomorphic)
+    """
+    add_mu_vectors_as_attribute(nw1)
+    add_mu_vectors_as_attribute(nw2)
 
     same_labels = _same_isometry_labels_and_labels
     if ignore_labels:
@@ -113,7 +121,7 @@ def _count_automorphisms(
     """
     nodes_available = nodes_available or []
     nodes_to_do = nodes_to_do if nodes_to_do is not None else set(network.nodes())
-    same_labels = _same_isometry_labels_and_labels
+    same_labels = _same_isometry_labels_and_labels # Setting same_labels here unnecessary?
     if ignore_labels:
         same_labels = _same_isometry_labels
 

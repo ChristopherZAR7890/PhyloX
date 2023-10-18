@@ -8,3 +8,5 @@ LABEL_ATTR = "label"
 LENGTH_ATTR = "length"
 #: Prefix for the node name of a reticulation node when parsing a phylogenetic network from newick
 RETIC_PREFIX = "__#R"
+#: The node attribute used to store the mu-vector of a node
+MUVECTOR_ATTR = "mu-vector"
