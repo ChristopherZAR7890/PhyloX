@@ -19,8 +19,8 @@
         "cells": [
           {
             "position": {
-              "x": -37.5,
-              "y": 120.00000000000023
+              "x": -140,
+              "y": 80
             },
             "size": {
               "width": 140,
@@ -31,8 +31,8 @@
                 "text": "Customers"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -46,15 +46,29 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "01034b55-be05-4ff0-9be6-f04086f36b76",
+                  "title": "Spoofing",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Pretend to be a certain customer or user",
+                  "mitigation": "Authentication (multi-factor)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
-              "x": 130,
-              "y": 70
+              "x": 35,
+              "y": 60
             },
             "size": {
               "width": 240,
@@ -65,8 +79,8 @@
                 "text": "Webshop Interface"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -80,12 +94,52 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "71160dee-c683-4728-b0ea-322b189ac31e",
+                  "title": "DDOS",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "DDOS",
+                  "mitigation": "Rate-limiting",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "2e27f616-4b02-42fa-bc6b-7e0a89d9606b",
+                  "title": "XS Scripting",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "XS Scripting",
+                  "mitigation": "Input validation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "ded0ce88-f06e-4652-9a49-a5c1b84eacdd",
+                  "title": "SQL injection",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "SQL Injection",
+                  "mitigation": "Input validation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -403,58 +457,141 @@
             }
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
+            "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
             "zIndex": 10,
             "connector": "smooth",
             "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
+              "type": "tm.Boundary",
+              "name": "",
               "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
             },
-            "id": "b0d09bff-9512-4bd1-b6fc-f7b3398ed929",
+            "id": "e8fcf07e-8430-4b7c-ace0-7cf676e591e5",
             "source": {
-              "cell": "33271184-ba9b-4f59-bc61-a9940b41e5ad"
+              "x": 440,
+              "y": -30
             },
             "target": {
-              "cell": "43285f31-7603-4e24-b802-01b36e3951c0"
+              "x": 560,
+              "y": 150
+            },
+            "vertices": []
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "1f502c48-9b56-431f-aac7-21d0b36ad4bd",
+            "source": {
+              "x": 800,
+              "y": 150
+            },
+            "target": {
+              "x": 1160,
+              "y": 150
+            }
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "67c788f0-3153-4c4a-91e6-b7616be65c77",
+            "source": {
+              "x": 800,
+              "y": 360
+            },
+            "target": {
+              "x": 1140,
+              "y": 360
+            }
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "789fd17b-727a-4cf1-a739-66b65b5d4bff",
+            "source": {
+              "x": 760,
+              "y": 280
+            },
+            "target": {
+              "x": 770,
+              "y": 560
             },
             "vertices": [
               {
-                "x": 510,
-                "y": 80
+                "x": 760,
+                "y": 360
               },
               {
-                "x": 400,
-                "y": 147
+                "x": 730,
+                "y": 500
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "18c3d6be-a1a1-4e6f-8b14-99101b03f1eb",
+            "source": {
+              "x": 40,
+              "y": -10
+            },
+            "target": {
+              "x": 40,
+              "y": 260
+            },
+            "vertices": [
+              {
+                "x": 30,
+                "y": 180
               }
             ]
           },
           {
             "position": {
-              "x": 275,
-              "y": -119.99999999999964
+              "x": 290,
+              "y": 10
             },
             "size": {
               "width": 180,
@@ -465,8 +602,8 @@
                 "text": "Payment Processing"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -480,18 +617,32 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "d47d2051-0a1f-4bf3-b31c-1656564e5262",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "",
+                  "mitigation": "Authentication, encryption",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
-              "x": 280,
-              "y": 220.00000000000023
+              "x": 260,
+              "y": 230
             },
             "size": {
               "width": 170,
@@ -528,7 +679,7 @@
           {
             "position": {
               "x": 480,
-              "y": 415
+              "y": 280
             },
             "size": {
               "width": 190,
@@ -539,11 +690,13 @@
                 "text": "CMS Store"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -557,19 +710,46 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "30cb7e24-0c7a-4acd-a661-1036a12bc535",
+                  "title": "Data breach",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "",
+                  "mitigation": "Encryption, Logging",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "648226b6-f30f-45de-b788-437e1afecf52",
+                  "title": "Data modification",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Changing the data (Customer profiles or orders)",
+                  "mitigation": "Authentication, Backups, Logging",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
-              "x": 870,
-              "y": 405
+              "x": 855,
+              "y": 410
             },
             "size": {
               "width": 230,
@@ -580,8 +760,8 @@
                 "text": "Commercial Services Webbiecom"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -595,9 +775,23 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "1ee026cb-c61d-4277-965d-f98d936cdf8e",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Pretend to be from Webbiecom",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -636,8 +830,8 @@
           },
           {
             "position": {
-              "x": 870,
-              "y": 220.00000000000023
+              "x": 885,
+              "y": 210
             },
             "size": {
               "width": 200,
@@ -677,8 +871,8 @@
           },
           {
             "position": {
-              "x": 540,
-              "y": -200
+              "x": 570,
+              "y": -60
             },
             "size": {
               "width": 210,
@@ -715,6 +909,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 10
   }
 }
